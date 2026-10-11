@@ -429,3 +429,75 @@ they are not strictly needed by precedence rules?
 you should it when you want your code to be more readable so that the next team member
 is able to understand the code. It is also the to avoid any bugs in th future
 */
+
+/* CHALLENGE 6*/
+
+/*PART A*/
+
+
+const grade = score >= 90 ? 'A' : score >= 80 ? 'B' 
+: score >= 70 ? 'C' : score >= 60 ? 'D' : score >= 50 ? 'E' : 'F';
+
+
+console.log(grade(95));
+console.log(grade(82));
+console.log(grade(73));
+console.log(grade(65));
+console.log(grade(54));
+console.log(grade(42));
+console.log(grade(0));
+
+/*PARTB*/
+  const displayName = user.displayName || 'Guest User';
+  const theme = user.theme || 'light';
+  const maxResults = user.maxResults || 10;
+
+  const lastLogin = user.lastLogin ?? 'Never';
+  const notificationCount = user.notificationCount ?? 0;
+
+  /*PART C*/
+//1
+console.log(user && user.address && user.address.city);
+
+//2
+console.log(user?.address?.city);
+
+//3
+console.log(user3 && user3.address && user3.address.city);
+
+/*PART D*/
+
+//It will print finally becouse all first 3 values are treated as false so it will print the last value
+null || undefined || 0 || "" || "finally"
+
+//It will print 0 becouse it will get the first non falsy value
+null ?? undefined ?? 0 ?? "" ?? "finally"
+
+
+// it will print first truthy becouse the first value is treated as false
+0 || "first truthy"
+
+// it will print 0
+0 ?? "first non-nullish"
+
+//it will print false becouse all the values need to be true. the moment it sees flse it will print false
+true && false && "never reached"
+
+//it will print thirf becouse there is no false value or a value that is treated as false
+"first" && "second" && "third"
+
+// it will print yes
+false || (true && "yes")
+
+
+
+// it will print yes
+(false || true) && "yes"
+
+// it will print 3 becouse of no false value. it will print the last one
+1 && 2 && 3
+
+// it will print foo
+null?.foo?.bar?.baz
+//it printed undefined
+
