@@ -537,3 +537,70 @@ typeof NaN
 typeof undeclaredVariable
 
 /*PART B*/
+
+// it will print true becouse an array is an instance of Array
+console.log([] instanceof Array); 
+
+// An array is also an instance of Object.I will print true
+console.log([] instanceof Object); 
+
+// It will print true becouse a object is an instance of Object
+console.log({} instanceof Object); 
+
+//It will print true becouse the string is instanceof a string
+console.log("hello" instanceof String);
+//It printed false 
+
+// An object os a string has been created so it will print true
+console.log(new String("hello") instanceof String); 
+
+// The Number is an object one not the primitive one so it will print false
+console.log(42 instanceof Number); 
+
+// It will print true becouse both are objects.
+console.log(new Date() instanceof Date); 
+
+//It will print false
+console.log(/abc/ instanceof RegExp); 
+
+// typeof is the right choice when checking a primitive data type to when to check if the variable is whivh data type.In this case it will print number
+const age = 23;
+console.log(typeof age); 
+
+
+/*PART C*/
+
+const user = { 
+    name: 'Lerato',
+    age: 25,
+    role: 'student' 
+};
+
+delete user.role;
+console.log(user);
+
+//2
+let x = 5;
+delete x;
+console.log(x);
+/*It will still print 5 becouse on the second line it tries to delete x
+  but cannot becouse of the keyword let
+*/
+
+//3.
+const arr = [1, 2, 3, 4];
+delete arr[1];
+console.log(arr);
+console.log(arr.length);
+console.log(arr[1]);
+
+/*It is dangerous becouse it does not change the arrays length even when you removed a value*/
+
+delete Math.PI
+/* it does not ork becouse in javascript this would throw a typeerror.
+ It is a built in property, it cannot be deleted*/
+
+ /*Final question: You have an array of items and need to remove one. Why would you NOT use
+delete and what should you use instead?
+You can use splice() method and not delete becouse ith delete, the length does not 
+change and the value removed will just be an empty space*/
