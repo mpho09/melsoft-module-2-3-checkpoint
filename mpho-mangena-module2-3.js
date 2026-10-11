@@ -604,3 +604,56 @@ delete Math.PI
 delete and what should you use instead?
 You can use splice() method and not delete becouse ith delete, the length does not 
 change and the value removed will just be an empty space*/
+
+/*CHALLENGE 8*/
+
+const READ = 1; // binary 0001
+const WRITE = 2; // binary 0010
+const DELETE = 4; // binary 0100
+const ADMIN = 8; // binary 1000
+
+//1
+const user = READ | WRITE;
+
+//2
+const UserAdmin = READ + WRITE + DELETE + ADMIN;
+
+//3
+console.log((userPermissions & READ) !== 0 ? 'Yes' : 'No');
+
+//4
+console.log((userPermissions & DELETE) !== 0 ? 'Yes' : 'No');
+
+//5
+
+userPermissions |= DELETE;
+console.log(userPermissions);
+
+//6
+userPermissions &= ~WRITE;
+console.log(userPermissions);
+
+//7
+userPermissions ^= ADMIN;
+console.log(userPermissions);
+
+
+/*Interview Questions
+Why would a team use bitwise flags for permissions instead of storing an array like ['read',
+'write']? Give two concrete reasons.
+They are very compact and efficient
+
+What is the real-world downside of bitwise permissions? When would you NOT use this
+pattern?
+Its harder to read and maintain. A developer may see a value like 7 and not immediately 
+know that it represents READ, WRITE and DELETE permissions.
+
+Explain the difference between & and && and | and ||. Give one case where confusing them
+would cause a silent bug.
+They are useful for permission flags because | can combine permissions and & can check 
+whether a permission exists. On the other hand && and || are logical operators used with
+conditions and truthy or falsy values.
+*/
+
+/*CHALLENGE 9*/
+
