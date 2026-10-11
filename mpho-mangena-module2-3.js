@@ -501,3 +501,39 @@ false || (true && "yes")
 null?.foo?.bar?.baz
 //it printed undefined
 
+/*CHALLENGE 7*/
+
+/* PART A */
+
+// it will print number becouse it checks what type of datatype it is
+typeof 42
+
+//it will print string becouse it checks for the datatype
+typeof "hello"
+
+// it will print boolean becouse it checks for the datatype
+typeof true
+
+//it will print undefined
+typeof undefined
+
+//it will print object
+typeof null 
+
+
+// it will print object becouse it checks for the datatype
+typeof {}
+
+// it will print object becouse it checks for the datatype and an array is an object
+typeof [] 
+
+// it will print function since this is a function
+typeof function() {}
+
+//it will print number
+typeof NaN
+
+//I believe it will print undefined becouse the variable does not have any value
+typeof undeclaredVariable
+
+/*PART B*/
