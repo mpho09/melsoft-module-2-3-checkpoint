@@ -657,3 +657,68 @@ conditions and truthy or falsy values.
 
 /*CHALLENGE 9*/
 
+/*first scenario*/
+
+const grossSalary = 45000;
+const paye = grossSalary * 0.25;
+const uif = Math.min(grossSalary * 0.01, 177.12);
+const medicalAid = 2500;
+const pension = grossSalary * 0.075;
+const totalDeductions = paye + uif + medicalAid + pension;
+const netSalary = grossSalary - totalDeductions;
+
+console.log(formatMoney(grossSalary));
+console.log(formatMoney(paye));
+console.log(formatMoney(uif));
+console.log(formatMoney(medicalAid));
+console.log(formatMoney(pension));
+console.log(formatMoney(totalDeductions));
+console.log(formatMoney(netSalary));
+
+/*second scenario */
+
+/*CHALLENGE 11*/
+
+
+var item1Price = "199.99"; // 1.should be changed to number not string becosue its an amount
+var item2Price = "49.50";// 2.should be changed to number not string becosue its an amount
+var item3Price = 125;
+var quantity = "2"; // 3.it should be number not string
+var discountCode = "SAVE10";
+var isLoggedIn = "true"; // 4.should be a boolean not string
+var customerAge = null; // 5.the null should be changed to an actual age
+var subtotal = item1Price + item2Price + item3Price * quantity; //6.should have brackets (item3Price * quantity)
+console.log("Subtotal:", subtotal);
+var discount = discountCode == "SAVE10" ? 0.1 : 0; //7. it is much more saver to use strict equality
+var discountAmount = subtotal * discount;
+var afterDiscount = subtotal - discountAmount;
+var vat = afterDiscount * 0.15;
+var total = afterDiscount + vat;
+var canCheckout = isLoggedIn && customerAge > 18; //8. should be >= not > only becouse someone who is 18 would not qualify
+console.log("Can checkout?", canCheckout);
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+var finalTotal = total - seniorDiscount;
+console.log("Total: R" + finalTotal.toFixed(2));
+
+/*correct code*/
+var item1Price = 199.99;
+var item2Price = 49.50;
+var item3Price = 125;
+var quantity = 2; 
+var discountCode = "SAVE10";
+var isLoggedIn = true; 
+var customerAge = 23; 
+var subtotal = item1Price + item2Price + (item3Price * quantity); 
+console.log("Subtotal:", subtotal);
+var discount = discountCode ==="SAVE10" ? 0.1 : 0; 
+var discountAmount = subtotal * discount;
+var afterDiscount = subtotal - discountAmount;
+var vat = afterDiscount * 0.15;
+var total = afterDiscount + vat;
+var canCheckout = isLoggedIn && customerAge >= 18; 
+console.log("Can checkout?", canCheckout);
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+var finalTotal = total - seniorDiscount;
+console.log("Total: R" + finalTotal.toFixed(2));
+
+/*CHALLENGE 12*/
