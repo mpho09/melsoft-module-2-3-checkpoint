@@ -722,3 +722,53 @@ var finalTotal = total - seniorDiscount;
 console.log("Total: R" + finalTotal.toFixed(2));
 
 /*CHALLENGE 12*/
+
+/*1 What is the ONE most important thing you understood about JavaScript's type system from
+this project? Give an example where it bit you.
+JavaScript can automatically convert values from one type to another and this can sometimes 
+cause unexpected results.when I tried to add a number to a string JavaScript 
+joined them instead of adding them mathematically.
+
+2 Explain in your own words why using === is almost always safer than ==. Give one concrete
+case where == would silently cause a bug.
+=== checks both the value and the data type while == can automatically changes values before 
+comparing them. Using === is safer because it helps prevent unexpected comparisons.
+
+3 When would you prefer the nullish coalescing operator (??) over the logical OR operator (||)?
+Give a specific example where swapping one for the other changes the outcome.
+I would use the nullish coalescing operator (??) when I only want to provide a default value if 
+the original value is null or undefined. The logical OR operator (||) also replaces valid values 
+such as 0, false and an empty string.
+
+4 typeof null returns 'object'. Explain WHY (the historical reason), and describe how you
+would check if a variable is specifically null without being tricked.
+It is because of a historical mistake in JavaScript's original implementation. 
+And it was kept to avoid breaking older programs that depend on it.
+
+5 Describe a realistic scenario in production code where forgetting to cast a value would
+cause a bug a developer might not notice for a long time.
+When a ebiste recieves prices ad string and the developer forgets to convert the value 
+into a number the website might join strings instead of calculating the correct total.
+
+6 In your banking calculator for Challenge 9, you had to handle floating-point arithmetic for
+money. Explain in your own words why 0.1 + 0.2 does NOT equal 0.3 in JavaScript, and the
+production-grade solution (hint: how real banks store money).
+JavaScript uses floating-point numbers to represent decimal values. 
+Some decimal numbers cannot be represented exactly in binary so small rounding errors 
+can occur during calculations.
+
+7 Explain the difference between the single-character operators (& and |) and the
+double-character operators (&& and ||). Give one case where confusing them would cause a
+silent production bug.
+&& checks logical conditions and returns a value based on whether the operands are truthy or falsy.
+|| returns the first truthy operand, or the last operand if neither is truthy.
+& performs a bitwise AND operation on numbers
+| performs a bitwise OR operation on numbers
+
+8 What was the single hardest Module 2 or Module 3 concept for you to grasp, and what
+finally made it click? Be honest — this is for me to know how to teach the next cohort better.
+It was understanding the difference between || and ??, especially when working with values such as 0, 
+false and empty strings. At first I thought both operators did the same thing by providing a default 
+value. What made it click was testing examples in the console and seeing that || replaces any falsy 
+value while ?? only replaces null or undefined.
+*/
